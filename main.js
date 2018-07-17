@@ -1,15 +1,40 @@
 var rnd = 0;
 var i = 1;
 var level = 6;
+var hit = 0;
 rnd = Math.floor(Math.random() * 300);
 
 
 switch (level) {
     case 6:
         if (rnd < 200) {
-            alert("hit");
+            hit = Math.floor(Math.random() * 3);
+            switch (hit) {
+                case 1:
+                    document.write('<img src="food.jpg"/>');
+                    document.write('<img src="food.jpg"/>');
+                    document.write('<img src="food.jpg"/>');
+                    break;
+                case 2:
+                    document.write('<img src="cat.jpg" />');
+                    document.write('<img src="cat.jpg" />');
+                    document.write('<img src="cat.jpg" />');
+                    break;
+                case 3:
+                    document.write('<img src="school.jpg"/>');
+                    document.write('<img src="school.jpg"/>');
+                    document.write('<img src="school.jpg"/>');
+                    break;
+                default:
+                    document.write('<img src="school.jpg"/>');
+                    document.write('<img src="school.jpg"/>');
+                    document.write('<img src="school.jpg"/>');
+                    break;
+            }
         } else {
-            alert("sorry");
+            document.write('<img src="food.jpg"/>');
+            document.write('<img src="cat.jpg" />');
+            document.write('<img src="school.jpg"/>');
         }
         break;
     default:
