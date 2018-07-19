@@ -3,7 +3,7 @@ var i = 0;
 var level = 6;
 var hit = 0;
 var out = new Array();
-var pic = 0;
+var pic = new Array();
 rnd = Math.floor(Math.random() * 300);
 
 switch (level) {
@@ -40,20 +40,20 @@ switch (level) {
       out[2] = 1;
       until(out[0] == out[1] && out[0] == out[2]);
       {
-        while (i < 2) {
-          out[i] = Math.floor(Math.random() * 3);
-          i = i + 1;
-        }
+        out[0] = Math.floor(Math.random() * 3);
+        out[1] = Math.floor(Math.random() * 3);
+        out[2] = Math.floor(Math.random() * 3);
       }
       j = out[0];
       k = out[1];
       h = out[2];
-      pic[1] = "'<img src="school.jpg"/>'";
-      pic[2] = ""'<img src="food.jpg.jpg"/>'";
-      pic[3] = ""'<img src="cat.jpg"/>'";
-      document.write(pic[j]);
-      document.write(pic[k]);
-      document.write(pic[h]);
+
+      pic[1] = "school.jpg";
+      pic[2] = "food.jpg";
+      pic[3] = "cat.jpg";
+      document.write('<img src="' + pic[j] + '">');
+      document.write('<img src="' + pic[k] + '">');
+      document.write('<img src="' + pic[h] + '">');
       break;
     }
 
