@@ -35,18 +35,15 @@ switch (level) {
       }
     } else {
       //level6ハズレ処理
-      out[0] = 1;
-      out[1] = 1;
-      out[2] = 1;
-      until(out[0] == out[1] && out[0] == out[2]);
-      {
-        out[0] = Math.floor(Math.random() * 3);
-        out[1] = Math.floor(Math.random() * 3);
-        out[2] = Math.floor(Math.random() * 3);
+      var j = 1;
+      var k = 1;
+      var h = 1;
+      //jkhが一緒の時、乱数を入れなおす
+      while (j == k && j == h) {
+        j = Math.floor(Math.random() * 2) + 1;
+        k = Math.floor(Math.random() * 2) + 1;
+        h = Math.floor(Math.random() * 2) + 1;
       }
-      j = out[0];
-      k = out[1];
-      h = out[2];
 
       pic[1] = "school.jpg";
       pic[2] = "food.jpg";
@@ -56,13 +53,53 @@ switch (level) {
       document.write('<img src="' + pic[h] + '">');
       break;
     }
+  
 
   //level6以外の処理
-  /* default:
+  default:
     if (rnd < 50) {
-      alert("hit");
+      hit = Math.floor(Math.random() * 3);
+      switch (hit) {
+        case 1:
+          document.write('<img src="food.jpg"/>');
+          document.write('<img src="food.jpg"/>');
+          document.write('<img src="food.jpg"/>');
+          break;
+        case 2:
+          document.write('<img src="cat.jpg" />');
+          document.write('<img src="cat.jpg" />');
+          document.write('<img src="cat.jpg" />');
+          break;
+        case 3:
+          document.write('<img src="school.jpg"/>');
+          document.write('<img src="school.jpg"/>');
+          document.write('<img src="school.jpg"/>');
+          break;
+        default:
+          document.write('<img src="school.jpg"/>');
+          document.write('<img src="school.jpg"/>');
+          document.write('<img src="school.jpg"/>');
+          break;
+      }
     } else {
-      alert("sorry");
+      var j = 1;
+      var k = 1;
+      var h = 1;
+      //jkhが一緒の時、乱数を入れなおす
+      while (j == k && j == h) {
+        j = Math.floor(Math.random() * 2) + 1;
+        k = Math.floor(Math.random() * 2) + 1;
+        h = Math.floor(Math.random() * 2) + 1;
+      }
+
+      pic[1] = "school.jpg";
+      pic[2] = "food.jpg";
+      pic[3] = "cat.jpg";
+      document.write('<img src="' + pic[j] + '">');
+      document.write('<img src="' + pic[k] + '">');
+      document.write('<img src="' + pic[h] + '">');
+      break;
+
+
     }
-    break; */
 }
