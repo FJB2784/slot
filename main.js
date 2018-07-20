@@ -51,9 +51,8 @@ switch (level) {
       document.write('<img src="' + pic[j] + '">');
       document.write('<img src="' + pic[k] + '">');
       document.write('<img src="' + pic[h] + '">');
-      break;
     }
-  
+    break;
 
   //level6以外の処理
   default:
